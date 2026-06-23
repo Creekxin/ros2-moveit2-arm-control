@@ -1,0 +1,50 @@
+name: 教程问题
+description: 询问教程理解、配置含义、ROS 2 或 MoveIt 学习问题
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请尽量说明你正在阅读的章节、执行到的步骤和具体疑问。这个模板适合学习讨论，不适合报告构建或运行失败；运行失败请使用 Bug 报告模板。
+  - type: input
+    id: section
+    attributes:
+      label: 相关章节或文件
+      description: 例如“5.7 创建两个新的话题订阅者”或 `ros2_ws/src/my_robot_bringup/launch/my_robot.launch.xml`
+      placeholder: 章节号、标题或文件路径
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的问题
+      description: 请描述具体哪里不理解，或希望补充解释什么概念
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: 你已经尝试过什么？
+      description: 可填写已阅读的章节、已执行的命令、查阅过的资料
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 如果问题与运行环境有关，请填写 Ubuntu、ROS 2、MoveIt 版本
+      placeholder: Ubuntu 22.04 / ROS 2 Humble / MoveIt 2 Humble
+    validations:
+      required: false
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: 问题是否涉及真实硬件？
+      options:
+        - 不涉及，只是教程或仿真问题
+        - 涉及 FakeSystem 仿真
+        - 涉及真实硬件
+        - 不确定
+    validations:
+      required: true

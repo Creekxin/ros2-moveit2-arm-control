@@ -1,0 +1,88 @@
+name: Bug 报告
+description: 报告环境配置、构建、启动、规划或执行失败等问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈问题。请尽量提供完整环境和复现步骤，方便定位 ROS 2、MoveIt 2、ros2_control 或工作空间配置问题。
+  - type: input
+    id: os
+    attributes:
+      label: 操作系统
+      description: 例如 Ubuntu 22.04
+      placeholder: Ubuntu 22.04
+    validations:
+      required: true
+  - type: input
+    id: ros2
+    attributes:
+      label: ROS 2 版本
+      description: 例如 Humble
+      placeholder: Humble
+    validations:
+      required: true
+  - type: input
+    id: moveit
+    attributes:
+      label: MoveIt 版本
+      description: 例如 MoveIt 2 Humble
+      placeholder: MoveIt 2 Humble
+    validations:
+      required: true
+  - type: input
+    id: workspace
+    attributes:
+      label: 使用的工作空间路径
+      description: 请填写实际路径，注意是否包含中文或空格
+      placeholder: ~/ros2_ws
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: 已执行命令
+      description: 按执行顺序粘贴相关命令
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: 完整报错
+      description: 请粘贴完整终端输出，不要只截取最后一行
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期现象
+      description: 你期望看到什么结果？
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际现象
+      description: 实际发生了什么？RViz、终端或节点状态有什么表现？
+    validations:
+      required: true
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: 当前使用 FakeSystem 还是真实硬件？
+      options:
+        - FakeSystem 仿真硬件
+        - 真实硬件
+        - 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图或补充信息
+      description: 可附 RViz 截图、rqt_graph、终端截图或相关配置片段
+    validations:
+      required: false
