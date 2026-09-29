@@ -1,6 +1,6 @@
 # ROS 2 + MoveIt 2 六自由度机械臂控制保姆级教程
 
-这是一个面向初学者的 ROS 2 Humble 与 MoveIt 2 机械臂仿真控制教程项目。仓库包含完整教程、配套图片资源，以及一个可构建的 ROS 2 工作空间源码，用于学习六自由度机械臂和夹爪从建模、规划到仿真执行的完整流程。
+这是一个 ROS 2 Humble 与 MoveIt 2 机械臂仿真控制教程项目。仓库包含完整教程、配套图片资源，以及一个可构建的 ROS 2 工作空间源码，用于学习六自由度机械臂和夹爪从建模、规划到仿真执行的完整流程。
 
 重要说明：本项目当前基于 `FakeSystem` 完成仿真控制验证，尚未接入真实机械臂硬件。文档中的硬件控制链路解释用于帮助理解 `MoveIt 2`、`ros2_control`、硬件接口和驱动之间的分工，不代表已经完成实机控制。
 
@@ -34,8 +34,8 @@
 简化启动流程如下，具体命令和顺序以完整教程为准：
 
 ```bash
-git clone https://github.com/<your-name>/ros2-moveit2-arm-control-tutorial.git
-cd ros2-moveit2-arm-control-tutorial/ros2_ws
+git clone https://github.com/Creekxin/ros2-moveit2-arm-control.git
+cd ros2-moveit2-arm-control/ros2_ws
 colcon build
 source install/setup.bash
 ros2 launch my_robot_bringup my_robot.launch.xml
@@ -44,7 +44,7 @@ ros2 launch my_robot_bringup my_robot.launch.xml
 另开终端后可启动 Commander 节点：
 
 ```bash
-cd ros2-moveit2-arm-control-tutorial/ros2_ws
+cd ros2-moveit2-arm-control/ros2_ws
 source install/setup.bash
 ros2 run my_robot_commander_cpp commander_template
 ```
@@ -52,7 +52,7 @@ ros2 run my_robot_commander_cpp commander_template
 ## 项目结构
 
 ```text
-ros2-moveit2-arm-control-tutorial/
+ros2-moveit2-arm-control/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
